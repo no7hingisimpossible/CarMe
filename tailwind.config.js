@@ -12,7 +12,7 @@ module.exports = {
 
           neutral: "#010101",
 
-          "base-100": "#FFFFFF",
+          "base-100": "#ffffff",
 
           info: "#687188",
 
@@ -20,7 +20,7 @@ module.exports = {
 
           warning: "#DF7E07",
 
-          error: "#FA5C5C",
+          error: "#ffffff",
         },
       },
       
