@@ -1,0 +1,58 @@
+[
+    {
+      "_id": 1,
+      "name": "Mercedez Benz",
+      "Price": "620,000",
+      "quantity": "900",
+      "supplierName": "Rossy Ibrahim",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-1.png"
+    },
+    {
+      "_id": 2,
+      "name": "Honda Civic",
+      "Price": "600,000",
+      "quantity": "100",
+      "supplierName": "Jhon",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-3.png"
+    },
+    {
+      "_id": 3,
+      "name": "Honda Civic",
+      "Price": "600,000",
+      "quantity": "100",
+      "supplierName": "Jhon",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-3.png"
+    },
+    {
+      "_id": 4,
+      "name": "Honda Civic",
+      "Price": "600,000",
+      "quantity": "100",
+      "supplierName": "Jhon",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-3.png"
+    },
+    {
+      "_id": 5,
+      "name": "Honda Civic",
+      "Price": "600,000",
+      "quantity": "100",
+      "supplierName": "Jhon",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-3.png"
+    },
+    {
+      "_id": 6,
+      "name": "Honda Civic",
+      "Price": "600,000",
+      "quantity": "100",
+      "supplierName": "Jhon",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-3.png"
+    },
+    {
+      "_id": 7,
+      "name": "Honda Civic",
+      "Price": "600,000",
+      "quantity": "100",
+      "supplierName": "Jhon",
+      "image": "https://smartdatawp.com/motodeal/motor-bikes/wp-content/uploads/sites/5/2020/03/best-bike-3.png"
+    }
+  ]
