@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Product from './Product';
+import Loading from '../../Shared/Loading';
+import { useQuery } from 'react-query';
 
 const Products = () => {
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-        const url = `http://localhost:5000/products`
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setProducts(data))
-    }, [])
+    // const [products, setProducts] = useState([]);
+    // useEffect(() => {
+    //     const url = `http://localhost:5000/products`
+    //     fetch(url)
+    //         .then(res => res.json())
+    //         .then(data => setProducts(data))
+    // }, [])
     const navigate = useNavigate()
     const navigateToPurchase = (id) => {
         navigate(`/purchase/${id}`)
+    }
+    const {data : product, isLoading } = useQuery("product", () => fetch('http://localhost:5000/products').then((res) => res.json()))
+    if(isLoading){
+        return <Loading/>;
     }
     return (
         <div>
@@ -22,11 +28,12 @@ const Products = () => {
             </div>
             <div className='grid grid-cols-3'>
                 {
-                    products.slice(0,3).map(product => 
-                    <Product key={product._id} product={product} navigateToPurchase={navigateToPurchase}>
+                    product.slice(0,3).map(pd => 
+                    <Product key={pd._id} pd={pd} navigateToPurchase={navigateToPurchase}>
 
                     </Product> )
                 }
+               
             </div>
         </div>
     );

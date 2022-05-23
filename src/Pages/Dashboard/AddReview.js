@@ -9,8 +9,20 @@ const AddReview = () => {
         const name = e.target.name.value; 
         const comment = e.target.comment.value; 
         console.log(name, comment);  
-
-        
+        const review = {
+            name: name, 
+            comment: comment 
+        }
+        const url = "http://localhost:5000/review"
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify(review),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
     }
     return (
         <div class="grid grid-cols-1 gap-3">

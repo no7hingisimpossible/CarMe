@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-const Product = ({ product, navigateToPurchase }) => {
-    const { name, Price, quantity, _id, image } = product
+const Product = ({ pd, navigateToPurchase }) => {
+    const { name, Price, quantity, _id, image } = pd
     
     return (
         <div class="card w-96 bg-base-100 mx-auto shadow-xl">
