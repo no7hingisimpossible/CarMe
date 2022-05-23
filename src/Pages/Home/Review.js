@@ -4,7 +4,7 @@ import people1 from '../../Asseets/Images/people1.png'
 const Review = ({ review }) => {
     const { name, reviews } = review;
     return (
-        <div className="card w-96 shadow text-primary-content mx-auto ">
+        <div className="card w-86 shadow text-primary-content mx-auto ">
             <div className="card-body">
                 <p className='mb-5'>{reviews}</p>
                 <div className="flex items-center">

@@ -1,7 +1,9 @@
 import React from 'react';
 
-const Product = ({ product }) => {
-    const { name, Price, quantity, supplierName, image } = product
+
+const Product = ({ product, navigateToPurchase }) => {
+    const { name, Price, quantity, _id, image } = product
+    
     return (
         <div class="card w-96 bg-base-100 mx-auto shadow-xl">
             <figure><img src={image} alt="Shoes" /></figure>
@@ -15,12 +17,9 @@ const Product = ({ product }) => {
                 <p>Available Quantity : {quantity}</p>
                 <p>Price: {Price}/unit</p>
                 <div class="card-actions">
-                    <button class="btn btn-primary">Buy Now</button>
+                    <button onClick={()=>{navigateToPurchase(_id)}} class="btn btn-primary">Buy Now</button>
                 </div>
-                {/* <div class="card-actions justify-end">
-                    <div class="badge badge-outline">Fashion</div>
-                    <div class="badge badge-outline">Products</div>
-                </div> */}
+                
             </div>
         </div>
     );

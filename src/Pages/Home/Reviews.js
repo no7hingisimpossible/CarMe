@@ -12,7 +12,7 @@ const Reviews = () => {
         <div>
             <h1 className='text-3xl px-16'>Our Testimonials</h1>
             <p className='mb-8 px-16'>See what our customers say</p>
-            <div className='grid grid-cols-3 mb-16'>
+            <div className='grid grid-cols-3 mb-16 px-16'>
             {
                 reviews.map(review => 
                 <Review key={review.id} review={review}>

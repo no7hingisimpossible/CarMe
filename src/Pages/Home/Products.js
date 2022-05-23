@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Product from './Product';
 
 const Products = () => {
@@ -8,6 +9,10 @@ const Products = () => {
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
+    const navigate = useNavigate()
+    const navigateToPurchase = (id) => {
+        navigate(`/purchase/${id}`)
+    }
     return (
         <div>
             <div className='text-center my-16'>
@@ -17,7 +22,7 @@ const Products = () => {
             <div className='grid grid-cols-3'>
                 {
                     products.slice(0,3).map(product => 
-                    <Product key={product._id} product={product}>
+                    <Product key={product._id} product={product} navigateToPurchase={navigateToPurchase}>
 
                     </Product> )
                 }
