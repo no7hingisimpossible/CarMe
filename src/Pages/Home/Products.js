@@ -5,7 +5,8 @@ import Product from './Product';
 const Products = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch("fakedb.json")
+        const url = `http://localhost:5000/products`
+        fetch(url)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
