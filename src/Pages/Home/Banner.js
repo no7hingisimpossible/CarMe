@@ -5,7 +5,7 @@ import banner3 from '../../Asseets/Images/banner-3.webp'
 
 const Banner = () => {
     return (
-        <div class="grid grid-cols-3 gap-5 px-16 mt-16">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 px-16 mt-8 mb-16">
             <div class="bg-base-100 shadow-xl" style={{ backgroundImage: `url(${banner1})` }}>
                 <div class="card-body">
                     <div class="flex justify-end">

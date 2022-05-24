@@ -23,9 +23,10 @@ const Navbar = () => {
                 <Link to="/" className="btn btn-ghost normal-case text-2xl">CARME</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal text-xl p-0">
+                <ul className="menu menu-horizontal text-base p-0">
                     <li><Link to="/" >Home</Link></li>
                     <li><Link to='purchase'>Purchase</Link></li>
+                    <li><Link to='portfolio'>Portfolio</Link></li>
                     <li><a>Blogs</a></li>
                     <li>{user ? <Link onClick={logout} to='login'>Signout</Link> :<Link to='login'>Login</Link>}</li>
                     {

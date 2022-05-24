@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
 import { auth } from '../../firebase.init';
+// import React from "react";
+import { useForm, Controller } from "react-hook-form";
+
+
 
 const Purchase = () => {
     const { id } = useParams()
@@ -10,7 +14,7 @@ const Purchase = () => {
     const [order, setOrder] = useState(0)
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://quiet-tor-30085.herokuapp.com/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -29,15 +33,15 @@ const Purchase = () => {
             alert('You have to order beyond the MOQ')
         }
         else {
-            //     fetch(`http://localhost:5000/products/${id}`, {
-            //     method: 'PUT',
-            //     headers: {
-            //         'content-type': 'application/json'
-            //     },
-            //     body: JSON.stringify({ quantity: quantityAvailable })
-            // })
-            //     .then(res => res.json())
-            //     .then(data => console.log(data, 'updated'))
+                fetch(`https://quiet-tor-30085.herokuapp.com/products/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({ quantity: quantityAvailable })
+            })
+                .then(res => res.json())
+                .then(data => console.log(data, 'updated'))
         }
 
     }
@@ -68,14 +72,12 @@ const Purchase = () => {
 
         setOrder(e.target.value);
     }
-
-
-
+    
     return (
         <div class="hero min-h-screen bg-base-100">
             <div class="hero-content flex-col lg:flex-row">
                 <img src={product.image} alt="" class="max-w-sm rounded-lg shadow-2xl" />
-                <div>
+                <div class="w-50% border">
                     <h1 class="text-5xl font-bold">{product.name}</h1>
                     <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                     <p>MOQ: {product.MOQ}</p>
@@ -98,12 +100,16 @@ const Purchase = () => {
                         </div>
 
                     </div>
+                    
 
 
                 </div>
+                
             </div>
         </div >
-    );
-};
+
+        );
+        };
+
 
 export default Purchase;

@@ -12,6 +12,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import Portfolio from './Pages/Portfolio';
 function App() {
   return (
     <div>
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/manage' element={<Manage/>}/>
+        <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/dashboard' element={<Dashboard/>}>
           <Route path='myorders' element={<MyOrder/>} />
           <Route path='addreview' element={<AddReview/>} />

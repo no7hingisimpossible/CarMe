@@ -1,0 +1,44 @@
+[
+    {
+      "_id": 1,
+      "name": "Auto Parts",
+      "performance": "Mesh,Billet,CNC",
+  
+      "image": "https://wp.brator.xyz/wp-content/uploads/2021/10/categories-01.png"
+    },
+    {
+      "_id": 2,
+      "name": "Starting & Charging",
+      "performance": "Polishes, Cleaners",
+  
+      "image": "https://wp.brator.xyz/wp-content/uploads/2021/10/categories-02.png"
+    },
+    {
+      "_id": 3,
+      "name": "Performance",
+      "performance": "Brakes,Batteries,Turbo",
+  
+      "image": "https://wp.brator.xyz/wp-content/uploads/2021/10/categories-03.png"
+    },
+    {
+      "_id": 4,
+      "name": "Wheels & Tires",
+      "performance": "Tires,TMPS Sensor",
+  
+      "image": "https://wp.brator.xyz/wp-content/uploads/2021/10/categories-04.png"
+    },
+    {
+      "_id": 5,
+      "name": "Exteriors",
+      "performance": "Lighting,Boyd,Wipers",
+  
+      "image": "https://wp.brator.xyz/wp-content/uploads/2021/10/categories-05.png"
+    },
+    {
+      "_id": 6,
+      "name": "Air Filters",
+      "performance": "Steering Wheels,Seats",
+  
+      "image": "https://wp.brator.xyz/wp-content/uploads/2021/10/categories-06.png"
+    }
+  ]

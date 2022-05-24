@@ -21,7 +21,7 @@ const MyProfile = () => {
             dist: dist, 
             phone: phone
         }
-        const url = `http://localhost:5000/profile`
+        const url = `https://quiet-tor-30085.herokuapp.com/profile`
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(profile),
@@ -31,6 +31,7 @@ const MyProfile = () => {
         })
             .then(res => res.json())
             .then(data => console.log(data))
+            
     }
     
     return (

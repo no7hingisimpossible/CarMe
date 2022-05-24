@@ -3,7 +3,8 @@ import React from 'react';
 const BusinessSummary = () => {
     return (
         <div class="px-16">
-            <div class="stats stats-vertical lg:stats-horizontal shadow mt-16 mb-24 w-full">
+            <p className='text-center text-2xl mt-12 mb-4'>We have <span class="text-secondary">attracted</span> more than </p>
+            <div class="stats stats-vertical lg:stats-horizontal shadow mb-16 w-full">
 
                 <div class="stat text-center">
                     <div class="stat-title">Items Bought</div>
