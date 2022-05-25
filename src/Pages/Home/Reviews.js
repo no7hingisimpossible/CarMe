@@ -9,7 +9,7 @@ import people1 from '../../Asseets/Images/people1.png'
 
 const Reviews = () => {
      const { data: reviews, isLoading } = useQuery("reviews", () =>
-        fetch("reviews.json").then((res) =>
+        fetch("http://localhost:5000/review").then((res) =>
             res.json()
         )
     );

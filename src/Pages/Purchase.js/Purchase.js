@@ -1,4 +1,3 @@
-import { toHaveStyle } from '@testing-library/jest-dom/dist/matchers';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
@@ -10,7 +9,7 @@ const Purchase = () => {
     const { id } = useParams()
     const [user] = useAuthState(auth)
     const [product, setProduct] = useState({});
-    
+
 
     useEffect(() => {
         const url = `http://localhost:5000/products/${id}`
@@ -21,7 +20,7 @@ const Purchase = () => {
 
     // Purchase Handler ---------------------------------------------
     // --------------------------------------------------------------
-    let error; 
+    let error;
     const purchaseHandler = (e) => {
         e.preventDefault();
         const name = e.target.name.value
@@ -32,102 +31,82 @@ const Purchase = () => {
         const quantity = parseInt(e.target.quantity.value)
 
         const data = {
-            name : name, 
-            email : email,
-            number : number, 
-            address : address, 
-            product : product, 
-            quantity : quantity 
+            name: name,
+            email: email,
+            number: number,
+            address: address,
+            product: product,
+            quantity: quantity
         }
-        
 
-        if(quantity < product.MOQ){
-            toast.error("You cannot order more than the available quantity", { id: "created" })  
-            
-            
+
+        if (quantity < product.MOQ) {
+            toast.error("You cannot order more than the available quantity", { id: "created" })
+
+
         }
-        if(quantity > product.quantity){
-            toast.error("You cannot order more than the available quantity", { id : "uncreated"});
+        if (quantity > product.quantity) {
+            toast.error("You cannot order more than the available quantity", { id: "uncreated" });
         }
-        else{
+        else {
             fetch('http://localhost:5000/order', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
-                  'Content-type': 'application/json; charset=UTF-8',
+                    'Content-type': 'application/json; charset=UTF-8',
                 },
-              })
+            })
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)
-                    toast.success("Order Placed", {id : "order-placed"})
+                    toast.success("Order Placed", { id: "order-placed" })
                 })
         }
+
         
-        // console.log(name, email, number, address, product, quantity, product.quantity);
-        
+
 
 
 
     }
-    // Increase Order by 1 -----------------------------
-    // -------------------------------------------------
-    // const increaseQuantity = () => {
-    //     let quantityOrdered;
-    //     if (order < product.quantity) {
-    //         quantityOrdered = order + 1
-    //         setOrder(quantityOrdered)
+    
 
-    //     } else if (order === product.quantity) {
-    //         alert('limit reached')
-    //     }
-
-    // }
-    // Decrease Order by 1 ----------------------------
-    // ------------------------------------------------
-    // const decreaseQuantity = () => {
-    //     let quantityOrdered;
-    //     if (order > product.MOQ) {
-    //         quantityOrdered = order - 1
-    //         setOrder(quantityOrdered)
-    //     }
-
-    // }
-    // let handleChange = (e) => {
-
-    //     setOrder(e.target.value);
-    // }
 
     return (
-        <div className="px-16 mt-5">
-            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
+        <div className="px-16 mt-5 bg-white">
+            <p className='text-3xl text-center mb-4'>Place Your Orders and Proceed</p>
+            <div className='grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1'>
                 {/* Product Image Card */}
-                <div class="card w-96">
-                    <figure class="">
-                        <img src={product.image} alt="Shoes" class="rounded-xl" />
-                    </figure>
+                <div className='lg:flex-row flex-col items-center'>
+                    <div class="card w-60">
+                        <figure class="">
+                            <img src={product.image} alt="Shoes" class="rounded-xl" />
+                        </figure>
+                    </div>
+                    <div class="card w-96 pt-10 px-2 ">
+                        <p class="text-3xl">{product.name}</p>
+                        <p>Description : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus odit nemo, iste tempore fuga debitis laboriosam alias, velit repellendus similique sit? Accusantium tenetur facere corrupti nesciunt, maiores cupiditate velit quas.</p>
+                        <p>Quantity Available: {product.quantity}</p>
+                        <p>MOQ: {product.MOQ}</p>
+                        <p>Price: {product.Price}</p>
+                    </div>
                 </div>
-                <div class="card w-96 pt-10 px-2">
-                    <p class="text-3xl">{product.name}</p>
-                    <p>Quantity Available: {product.quantity}</p>
-                    <p>MOQ: {product.MOQ}</p>
-                    <p>Price: {product.Price}</p>
-                </div>
-                <div class="card w-full max-w-sm shadow-2xl bg-base-100 p-3">
+                
+                <div class="card w-full max-w-sm shadow-2xl  p-3 mx-auto">
                     <form onSubmit={purchaseHandler}>
                         <div class="">
                             <div>
                                 {/* <label class="block mb-2 text-sm font-medium text-gray-900">Name</label> */}
-                                <input disabled defaultValue={user.displayName} type="text" name="name" class="input input-bordered w-full"/>
+                                <input disabled defaultValue={user.displayName} type="text" name="name" class="input input-bordered w-full" />
                             </div>
 
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
-                                <input disabled defaultValue={user.email} type="email" id="email" name='email' class="input input-bordered w-full"/>
+                                <input disabled defaultValue={user.email} type="email" id="email" name='email' class="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Phone number</label>
-                                <input type="text" placeholder="+880" name='number' class="input input-bordered w-full"/>
+                                <input type="text" placeholder="+880" name='number' class="input input-bordered w-full" />
                             </div>
                             <div>
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Address</label>
@@ -144,7 +123,7 @@ const Purchase = () => {
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary w-full mt-6">Submit</button>
-                        
+
                     </form>
                 </div>
 

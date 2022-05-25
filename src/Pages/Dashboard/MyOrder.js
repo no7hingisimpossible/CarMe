@@ -2,16 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
 import Table from './Table';
+import Loading from '../../Shared/Loading';
 
 const MyOrder = () => {
     const [user, loading] = useAuthState(auth)
-    const email = user.email
+    const email = user?.email
     const [orders, setOrders] = useState([])
     useEffect(() => {
         fetch(`http://localhost:5000/order?email=${email}`)
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, [])
+    }, [orders])
+    
+    if(loading){
+        return <Loading/>
+    }
+    const deleteHandler = (id) => {
+        fetch(`http://localhost:5000/order/${id}`, {
+            method : "DELETE"
+        })
+        .then(res => res.json())
+        .then(data => console.log(data))
+        // console.log(id);
+    }
+
+  
     return (
         <div>
             <h2>All orders: {orders.length}</h2>
@@ -32,6 +47,8 @@ const MyOrder = () => {
                             <Table
                             order={order}
                             index ={index}
+                            key={order._id}
+                            deleteHandler={deleteHandler}
                             ></Table>)
                         }
                        

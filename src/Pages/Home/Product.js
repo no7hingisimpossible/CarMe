@@ -5,7 +5,7 @@ const Product = ({ pd, navigateToPurchase }) => {
     const { name, Price, quantity, _id, image } = pd
 
     return (
-        <div class="card w-72 bg-base-100 mx-auto shadow-2xl">
+        <div class="card w-72 mx-auto shadow-2xl">
             <figure><img src={image} alt="Shoes" /></figure>
             <div class="card-body">
                 <h2 class="card-title">

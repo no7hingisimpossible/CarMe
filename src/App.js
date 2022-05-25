@@ -39,6 +39,7 @@ function App() {
           <Route path='profile' element={<MyProfile />} />
         </Route>
         <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>} />
+        
       </Routes>
         <Toaster/>
     </div>

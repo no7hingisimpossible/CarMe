@@ -10,7 +10,7 @@ import Reviews from './Reviews';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-white'>
             <Carousel2/>
             <Banner/>
             <BusinessSummary/>
