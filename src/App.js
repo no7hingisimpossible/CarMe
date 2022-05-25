@@ -13,23 +13,34 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Portfolio from './Pages/Portfolio';
+import { Toaster } from "react-hot-toast";
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, [])
+
   return (
     <div>
       <Navbar />
+      <Toaster/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/signup' element={<Signup/>}/>
-        <Route path='/manage' element={<Manage/>}/>
-        <Route path='/portfolio' element={<Portfolio/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}>
-          <Route path='myorders' element={<MyOrder/>} />
-          <Route path='addreview' element={<AddReview/>} />
-          <Route path='profile' element={<MyProfile/>} />
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/manage' element={<Manage />} />
+        <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/dashboard' element={<Dashboard />}>
+          <Route path='myorders' element={<MyOrder />} />
+          <Route path='addreview' element={<AddReview />} />
+          <Route path='profile' element={<MyProfile />} />
         </Route>
-        <Route path='/purchase/:id' element={<RequireAuth><Purchase/></RequireAuth>}/>
+        <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>} />
       </Routes>
+        <Toaster/>
     </div>
   );
 }

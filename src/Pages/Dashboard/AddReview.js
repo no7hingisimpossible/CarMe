@@ -13,7 +13,7 @@ const AddReview = () => {
             name: name, 
             comment: comment 
         }
-        const url = "https://quiet-tor-30085.herokuapp.com/review"
+        const url = "http://localhost:5000/review"
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(review),
