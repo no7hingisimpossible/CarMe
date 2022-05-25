@@ -20,14 +20,14 @@ const Purchase = () => {
 
     // Purchase Handler ---------------------------------------------
     // --------------------------------------------------------------
-    let error;
+    
     const purchaseHandler = (e) => {
         e.preventDefault();
         const name = e.target.name.value
         const email = e.target.email.value
         const number = e.target.number.value
         const address = e.target.address.value
-        const product = e.target.product.value
+        const productName = e.target.product.value
         const quantity = parseInt(e.target.quantity.value)
 
         const data = {
@@ -35,11 +35,12 @@ const Purchase = () => {
             email: email,
             number: number,
             address: address,
-            product: product,
+            product: productName,
             quantity: quantity
         }
 
-
+        console.log(quantity);
+        console.log(product)
         if (quantity < product.MOQ) {
             toast.error("You cannot order more than the available quantity", { id: "created" })
 
@@ -97,12 +98,12 @@ const Purchase = () => {
                         <div class="">
                             <div>
                                 {/* <label class="block mb-2 text-sm font-medium text-gray-900">Name</label> */}
-                                <input disabled defaultValue={user.displayName} type="text" name="name" class="input input-bordered w-full" />
+                                <input disabled defaultValue={user.displayName} type="text" name="name" class="input input-bordered w-full " />
                             </div>
 
                             <div>
                                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Email address</label>
-                                <input disabled defaultValue={user.email} type="email" id="email" name='email' class="input input-bordered w-full" />
+                                <input disabled defaultValue={user.email} type="email" id="email" name='email' class="input input-bordered w-full " />
                             </div>
                             <div>
                                 <label for="phone" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Phone number</label>
@@ -119,7 +120,7 @@ const Purchase = () => {
                             <div>
                                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Quantity</label>
                                 <input type="number" name='quantity' class="input input-bordered w-full" />
-                                {error?.props?.children}
+                                {/* {error?.props?.children} */}
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary w-full mt-6">Submit</button>
