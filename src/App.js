@@ -7,7 +7,6 @@ import Login from './Pages/Authentication/Login';
 import Purchase from './Pages/Purchase.js/Purchase';
 import RequireAuth from './Pages/Authentication/RequireAuth';
 import Signup from './Pages/Authentication/Signup';
-import Manage from './Pages/Manage'
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyOrder from './Pages/Dashboard/MyOrder';
 import AddReview from './Pages/Dashboard/AddReview';
@@ -18,6 +17,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AllUser from './Pages/Dashboard/AllUser';
+import Manage from './Pages/Dashboard/Manage';
 
 function App() {
   useEffect(() => {
@@ -32,13 +32,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/manage' element={<Manage />} />
         <Route path='/portfolio' element={<Portfolio />} />
         <Route path='/dashboard' element={<Dashboard />}>
           <Route path='myorders' element={<MyOrder />} />
           <Route path='addreview' element={<AddReview />} />
           <Route path='profile' element={<MyProfile />} />
           <Route path='users' element={<AllUser/>} />
+          <Route path='manage' element={<Manage/>} />
         </Route>
         <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>} />
         

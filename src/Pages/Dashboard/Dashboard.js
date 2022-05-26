@@ -24,9 +24,9 @@ const Dashboard = () => {
                     {!admin && <li><Link to="/dashboard/addreview">Add a Review</Link></li>}
                     <li><Link to="/dashboard/profile">My Profile</Link></li>
                     {admin && <li><Link to="/dashboard/users">All Users</Link></li>}
-                    {admin && <li><Link to="/dashboard/users">Manage</Link></li>}
-                    {admin && <li><Link to="/dashboard/users">Add Products</Link></li>}
-                    {admin && <li><Link to="/dashboard/users">All Orders</Link></li>}
+                    {admin && <li><Link to="/dashboard/manage">Manage</Link></li>}
+                    {admin && <li><Link to="/dashboard/addProducts">Add Products</Link></li>}
+                    {admin && <li><Link to="/dashboard/allOrders">All Orders</Link></li>}
                 </ul>
 
             </div>
