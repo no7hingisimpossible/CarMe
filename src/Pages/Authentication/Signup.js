@@ -23,8 +23,8 @@ const Signup = () => {
 
     const navigate = useNavigate()
 
-    if (user || guser) {
-        // console.log(user || guser);
+    if (token) {
+        
         navigate('/');
 
     }
