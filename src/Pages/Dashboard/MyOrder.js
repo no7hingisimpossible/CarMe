@@ -12,7 +12,7 @@ const MyOrder = () => {
     const [orders, setOrders] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${email}`, {
+        fetch(`https://quiet-tor-30085.herokuapp.com/order?email=${email}`, {
             method : 'GET',
             headers:{
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -30,7 +30,7 @@ const MyOrder = () => {
                 setOrders(data)
             })
     }, [])
-    // const {data: orders, isLoading} = useQuery('orders', ()=> fetch(`http://localhost:5000/order?email=${email}`).then(res => res.json()))
+    // const {data: orders, isLoading} = useQuery('orders', ()=> fetch(`https://quiet-tor-30085.herokuapp.com/order?email=${email}`).then(res => res.json()))
     // if(isLoading){
     //     return <Loading/>
     // }
@@ -39,7 +39,7 @@ const MyOrder = () => {
         return <Loading/>
     }
     const deleteHandler = (id) => {
-        fetch(`http://localhost:5000/order/${id}`, {
+        fetch(`https://quiet-tor-30085.herokuapp.com/order/${id}`, {
             method : "DELETE"
         })
         .then(res => res.json())

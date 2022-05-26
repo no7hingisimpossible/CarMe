@@ -12,7 +12,7 @@ const Purchase = () => {
 
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://quiet-tor-30085.herokuapp.com/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setProduct(data))
@@ -50,7 +50,7 @@ const Purchase = () => {
             toast.error("You cannot order more than the available quantity", { id: "uncreated" });
         }
         else {
-            fetch('http://localhost:5000/order', {
+            fetch('https://quiet-tor-30085.herokuapp.com/order', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {

@@ -4,12 +4,12 @@ import ManageRow from './ManageRow';
 const Manage = () => {
     const [products, setProducts] = useState([])
     useEffect(()=> {
-        fetch('http://localhost:5000/products')
+        fetch('https://quiet-tor-30085.herokuapp.com/products')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[products])
     const deleteHandler = (id) => {
-        fetch(`http://localhost:5000/products/${id}`,{
+        fetch(`https://quiet-tor-30085.herokuapp.com/products/${id}`,{
             method: "DELETE"
         })
         .then(res => res.json())

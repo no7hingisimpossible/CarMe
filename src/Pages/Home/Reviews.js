@@ -9,7 +9,7 @@ import people1 from '../../Asseets/Images/people1.png'
 
 const Reviews = () => {
      const { data: reviews, isLoading } = useQuery("reviews", () =>
-        fetch("http://localhost:5000/review").then((res) =>
+        fetch("https://quiet-tor-30085.herokuapp.com/review").then((res) =>
             res.json()
         )
     );

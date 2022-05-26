@@ -3,7 +3,7 @@ import React from 'react';
 const Table = ({order, index, deleteHandler}) => {
     const {name, product, email, _id } = order; 
     // const deleteHandler = (id) => {
-    //     fetch(`http://localhost:5000/order/${id}`)
+    //     fetch(`https://quiet-tor-30085.herokuapp.com/order/${id}`)
     //     .then(res => res.json())
     //     .then(data => console.log())
     // }

@@ -20,7 +20,7 @@ const AddProducts = () => {
             
         }
         
-        fetch('http://localhost:5000/products', {
+        fetch('https://quiet-tor-30085.herokuapp.com/products', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
