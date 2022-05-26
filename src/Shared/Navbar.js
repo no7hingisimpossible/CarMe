@@ -22,6 +22,10 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/" className="btn btn-ghost normal-case text-2xl">CARME</Link>
+                <div className="navbar-end">
+                    
+                    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal text-base p-0">
@@ -31,11 +35,11 @@ const Navbar = () => {
                     <li><a>Blogs</a></li>
                     {
                         user && <>
-                            
+
                             <li><Link to="dashboard">Dashboard</Link></li>
                         </>
                     }
-                    <li>{user ? <Link onClick={logout} to='login'>Signout</Link> :<Link to='login'>Login</Link>}</li>
+                    <li>{user ? <Link onClick={logout} to='login'>Signout</Link> : <Link to='login'>Login</Link>}</li>
                 </ul>
             </div>
 

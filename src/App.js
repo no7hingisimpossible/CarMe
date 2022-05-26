@@ -17,6 +17,7 @@ import { Toaster } from "react-hot-toast";
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import AllUser from './Pages/Dashboard/AllUser';
 
 function App() {
   useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
           <Route path='myorders' element={<MyOrder />} />
           <Route path='addreview' element={<AddReview />} />
           <Route path='profile' element={<MyProfile />} />
+          <Route path='users' element={<AllUser/>} />
         </Route>
         <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>} />
         

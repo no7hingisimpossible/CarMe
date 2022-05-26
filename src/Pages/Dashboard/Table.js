@@ -15,8 +15,8 @@ const Table = ({order, index, deleteHandler}) => {
                 <td>{name}</td>
                 <td>{product}</td>
                 <td>{email}</td>
-                <td><button onClick={()=>deleteHandler(_id)}>Cancel</button></td>
-                <td><button>Payment</button></td>
+                <td><button class="btn btn-sm bg-red-500 border-0 text-white" onClick={()=>deleteHandler(_id)}>Cancel</button></td>
+                <td><button class="btn btn-sm bg-green-600 border-0 text-white">Payment</button></td>
             </tr>
         
 

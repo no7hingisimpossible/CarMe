@@ -3,16 +3,21 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
 import Table from './Table';
 import Loading from '../../Shared/Loading';
+import { useQuery } from 'react-query';
 
 const MyOrder = () => {
     const [user, loading] = useAuthState(auth)
     const email = user?.email
-    const [orders, setOrders] = useState([])
-    useEffect(() => {
-        fetch(`http://localhost:5000/order?email=${email}`)
-            .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [orders])
+    // const [orders, setOrders] = useState([])
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/order?email=${email}`)
+    //         .then(res => res.json())
+    //         .then(data => setOrders(data))
+    // }, [orders])
+    const {data: orders, isLoading} = useQuery('orders', ()=> fetch(`http://localhost:5000/order?email=${email}`).then(res => res.json()))
+    if(isLoading){
+        return <Loading/>
+    }
     
     if(loading){
         return <Loading/>

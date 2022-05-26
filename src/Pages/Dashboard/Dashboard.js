@@ -8,7 +8,7 @@ const Dashboard = () => {
             <div class="drawer-content">
                 {/* <!-- Page content here --> */}
                 <Outlet/>
-                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+                {/* <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label> */}
 
             </div>
             <div class="drawer-side">
@@ -18,6 +18,7 @@ const Dashboard = () => {
                     <li><Link to="/dashboard/myorders">My Orders</Link></li>
                     <li><Link to="/dashboard/addreview">Add a Review</Link></li>
                     <li><Link to="/dashboard/profile">My Profile</Link></li>
+                    <li><Link to="/dashboard/users">All Users</Link></li>
                 </ul>
 
             </div>
