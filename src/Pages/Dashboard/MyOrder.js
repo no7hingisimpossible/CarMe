@@ -4,20 +4,36 @@ import { auth } from '../../firebase.init';
 import Table from './Table';
 import Loading from '../../Shared/Loading';
 import { useQuery } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 
 const MyOrder = () => {
     const [user, loading] = useAuthState(auth)
     const email = user?.email
-    // const [orders, setOrders] = useState([])
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/order?email=${email}`)
-    //         .then(res => res.json())
-    //         .then(data => setOrders(data))
-    // }, [orders])
-    const {data: orders, isLoading} = useQuery('orders', ()=> fetch(`http://localhost:5000/order?email=${email}`).then(res => res.json()))
-    if(isLoading){
-        return <Loading/>
-    }
+    const [orders, setOrders] = useState([])
+    const navigate = useNavigate()
+    useEffect(() => {
+        fetch(`http://localhost:5000/order?email=${email}`, {
+            method : 'GET',
+            headers:{
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                console.log("res", res);
+                if(res.status === 401 || res.status === 403){
+                    navigate("/")
+                }
+                return res.json()
+            })
+            .then(data => {
+
+                setOrders(data)
+            })
+    }, [])
+    // const {data: orders, isLoading} = useQuery('orders', ()=> fetch(`http://localhost:5000/order?email=${email}`).then(res => res.json()))
+    // if(isLoading){
+    //     return <Loading/>
+    // }
     
     if(loading){
         return <Loading/>
@@ -34,7 +50,7 @@ const MyOrder = () => {
   
     return (
         <div>
-            <h2>All orders: {orders.length}</h2>
+            <h2>All orders: {orders?.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     
