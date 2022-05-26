@@ -6,7 +6,8 @@ import { signOut } from 'firebase/auth';
 const Navbar = () => {
     const [user] = useAuthState(auth)
     const logout = () => {
-        signOut(auth)
+        signOut(auth);
+        localStorage.removeItem('accessToken')
     }
     return (
         <div className="navbar bg-primary text-accent">
