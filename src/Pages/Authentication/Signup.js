@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../../firebase.init';
 import Loading from '../../Shared/Loading';
+import useToken from '../../useHooks';
 
 const Signup = () => {
     const [signInWithGoogle, guser, gloading, gerror] = useSignInWithGoogle(auth);
@@ -17,8 +18,8 @@ const Signup = () => {
 
     const [updateProfile, updating, UpdatingError] = useUpdateProfile(auth);
 
-    // const [token] = useToken(user || guser)
-    // const [token] = useToken(user || guser)
+    const [token] = useToken(user || guser)
+    
 
     const navigate = useNavigate()
 
