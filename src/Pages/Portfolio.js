@@ -37,19 +37,29 @@ const Portfolio = () => {
                         className='w-full' src={bg} alt="" />
                 </div>
             </div>
-            <div class="text-center mt-10 mb-10 text-2xl text-secondary">Here are the websites I've developed</div>
+            <div class="text-center mt-10 mb-10 text-2xl text-secondary">Here are the websites that I've developed in this course</div>
             <div className='grid grid-cols-3 px-56 '>
-                <div class="card w-40 bg-base-100 shadow-xl">
+                <div class="card w-40 bg-base-100 shadow-xl ">
                     <figure><img src={Aesthetic} alt="Shoes" /></figure>
-                    
+
                 </div>
                 <div class="card w-40 bg-base-100 shadow-xl">
                     <figure><img src={Warehouse} alt="Shoes" /></figure>
-                    
+
                 </div>
                 <div class="card w-40 bg-base-100 shadow-xl">
                     <figure><img src={King} alt="Shoes" /></figure>
-                    
+
+                </div>
+            </div>
+            <div class="hero min-h-screen ">
+                <div class="hero-content flex-col lg:flex-row">
+                    <img src="https://api.lorem.space/image/movie?w=260&h=400" class="max-w-sm rounded-lg shadow-2xl" />
+                    <div>
+                        <h1 class="text-5xl font-bold">Box Office News!</h1>
+                        <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                        <button class="btn btn-primary">Get Started</button>
+                    </div>
                 </div>
             </div>
         </div>
