@@ -21,6 +21,7 @@ import Manage from './Pages/Dashboard/Manage';
 import AddProducts from './Pages/Dashboard/AddProducts';
 import AllOrders from './Pages/Dashboard/AllOrders';
 import PageNotFound from './Pages/PageNotFound';
+import Blogs from './Pages/Blogs';
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/portfolio' element={<Portfolio />} />
+        <Route path='/blogs' element={<Blogs/>} />
         <Route path='/dashboard' element={<Dashboard />}>
           <Route path='myorders' element={<MyOrder />} />
           <Route path='addreview' element={<AddReview />} />
