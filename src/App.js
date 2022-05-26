@@ -18,6 +18,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import AllUser from './Pages/Dashboard/AllUser';
 import Manage from './Pages/Dashboard/Manage';
+import AddProducts from './Pages/Dashboard/AddProducts';
+import AllOrders from './Pages/Dashboard/AllOrders';
+import PageNotFound from './Pages/PageNotFound';
+
 
 function App() {
   useEffect(() => {
@@ -39,9 +43,11 @@ function App() {
           <Route path='profile' element={<MyProfile />} />
           <Route path='users' element={<AllUser/>} />
           <Route path='manage' element={<Manage/>} />
+          <Route path='addProducts' element={<AddProducts/>} />
+          <Route path='allOrders' element={<AllOrders/>} />
         </Route>
         <Route path='/purchase/:id' element={<RequireAuth><Purchase /></RequireAuth>} />
-        
+        <Route path='*' element={<PageNotFound/>}></Route>
       </Routes>
         <Toaster/>
     </div>

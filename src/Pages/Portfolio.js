@@ -38,16 +38,16 @@ const Portfolio = () => {
                 </div>
             </div>
             <div class="text-center mt-10 mb-10 text-2xl text-secondary">Here are the websites that I've developed in this course</div>
-            <div className='grid grid-cols-3 px-56 '>
-                <div class="card w-40 bg-base-100 shadow-xl ">
+            <div className='grid lg:grid-cols-3 grid-cols-1 lg:px-56'>
+                <div class="card mx-auto lg:w-40 bg-base-100 shadow-xl">
                     <figure><img src={Aesthetic} alt="Shoes" /></figure>
 
                 </div>
-                <div class="card w-40 bg-base-100 shadow-xl">
+                <div class="card mx-auto lg:w-40 w-40 bg-base-100 shadow-xl">
                     <figure><img src={Warehouse} alt="Shoes" /></figure>
 
                 </div>
-                <div class="card w-40 bg-base-100 shadow-xl">
+                <div class="card mx-auto lg:w-40 w-40 bg-base-100 shadow-xl">
                     <figure><img src={King} alt="Shoes" /></figure>
 
                 </div>

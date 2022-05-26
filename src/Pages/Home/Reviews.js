@@ -20,7 +20,7 @@ const Reviews = () => {
         <div  className="px-16 mx-auto my-16">
             <p className="text-center text-2xl mb-4">Have a look at what our <span className="text-secondary">clients</span> say!</p>
             <Swiper
-                slidesPerView={3}
+                slidesPerView={1}
                 spaceBetween={30}
                 freeMode={true}
                 pagination={{
